@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Model\CurrentVolunteer;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Model\Volorg;
+use App\Volorg;
 
 class VolorgController extends Controller
 {
@@ -27,7 +28,8 @@ class VolorgController extends Controller
      */
     public function index()
     {
-        return view('volorg');
+        $volorg = Volorg::with('currentvolunteer')->get();
+        return view('volorg')->with('volorg', $volorg);
     }
     
     public function showMatched()

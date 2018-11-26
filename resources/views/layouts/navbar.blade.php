@@ -1,31 +1,25 @@
- <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+ <nav class="navbar navbar-expand-md navbar-inverse navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="/img/V2Ologo.png" alt="v2o logo" height="73.17" width="90.2px">
-                    <!--{{ config('V2O', 'Volunteer 2 Organisation') }}-->
+                    <img src="/img/V2Ologo.png" alt="v2o logo" height="53.17" width="60.2px">
+                    {{ config('V2O', 'Volunteer 2 Organisation') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+                @guest
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-					<ul class="navbar-nav mr-auto">
-						<!--li class="nav-item">
-							<a class="nav-link" href="/services">Services</a>
-						</li>
+					<!--ul class="navbar-nav mr-auto">
 						<li class="nav-item">
-							<a class="nav-link" href="/about">About </a>
+							<a class="nav-link" href="">Contact</a>
 						</li>
-						<!--li class="nav-item">
-							<a class="nav-link" href="/contact">Contact</a>
-						</li-->
-					</ul>
+					</ul-->
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        @guest
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
@@ -35,7 +29,15 @@
                                 @endif
                             </li>
                         @else
-							
+							<ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('volorg') }}">Profile</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="">Report</a>
+                                </li>
+                            </ul>
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-lg-6">
             <div class="card">
                 <div class="card-header">Volunteers Matched to {{Auth::user()->name }}</div>
 
@@ -13,19 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a href="{{ url('volorg') }}">Back to Main Page</a>
+                    <!--a href="{{ url('volorg') }}">Back to Main Page</a-->
                     <h2>List of volunteers interested in your cause</h2>
                     <br>
 
-                    <style type="text/css">
-                        .tg  {border-collapse:collapse;border-spacing:0;border-width:1px;border-style:solid;border-color:#ccc;}
-                        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
-                        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
-                        .tg .tg-buh4{background-color:#f9f9f9;text-align:left;vertical-align:top}
-                        .tg .tg-ddb2{font-family:serif !important;;text-align:center;vertical-align:top}
-                        .tg .tg-0lax{text-align:left;vertical-align:top}
-                    </style>
-                    
+
                 <table class="tg">
                   <tr>
                     <th class="tg-ddb2">First Name</th>
@@ -47,16 +39,43 @@
                   </tr>
                 @endforeach
                 </table>
-                    
+
                 <a href="{{ url('volorg') }}">Back to Main Page</a>
 
                     
                 </div>
             </div>
         </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">Current Volunteers of {{Auth::user()->name }}</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <!--a href="{{ url('volorg') }}">Back to Main Page</a-->
+                        <h2>List of current volunteers in your organization</h2>
+                        <br>
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-4 col-md-4">
+                                    <a href="{{ url('currentvolunteer/create') }}" class="btn btn-primary btn-sm" style="width:70%;float:right">ADD RECORD</a>
+                                </div>
+                                {!! Form::open (array('method' => 'PUT','url' => '')) !!}
+                                {!!Form::submit('EDIT RECORD',array('class'=>'btn btn-primary  btn-sm', 'style' => 'width:100%;margin:0 5px 0 5px;float:right;')) !!}
+                                {!! Form::close() !!}
+
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
-
 
 

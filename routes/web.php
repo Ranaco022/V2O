@@ -20,16 +20,18 @@ Route::get('/home', 'HomeController@index');
 
 
 
-Route::resource('interest','InterestController');
-Route::resource('vo','VoController');
+//Route::resource('interest','InterestController');
+//Route::resource('vo','VoController');
 Route::resource('volunteer','VolunteerController');
+Route::resource('currentvolunteer','CurrentVolunteerController');
 
 Route::get('volunteer/show/{id}', 'VolunteerController@show');
 Route::get('/login/vo', 'Auth\LoginController@showVoLoginForm');
 
 
-Route::post('/login/vo', 'Auth\LoginController@voLogin');
-
+//Route::post('/login/vo', 'Auth\LoginController@voLogin');
+//Route::get('currentvolunteer/{id}', 'CurrentVolunteerController@show');
+//Route::get('/currentvolunteer/{id}', ['as' => 'problems.show', 'uses' => 'CurrentVolunteerController@show']);
 Route::view('/vo/', 'vo');
 
 

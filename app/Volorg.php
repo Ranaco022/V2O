@@ -29,5 +29,9 @@ class Volorg extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    
+
+    public function currentvolunteer()
+    {
+        return $this->hasMany('App\Model\CurrentVolunteer');
+    }
 }
