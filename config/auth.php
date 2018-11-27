@@ -48,7 +48,8 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
-        
+
+        /*Volunteer Organization*/
         'volorg' => [
             'driver' => 'session',
             'provider' => 'volorgs',
@@ -58,7 +59,13 @@ return [
             'driver' => 'token',
             'provider' => 'volorgs',
         ],
-            
+
+        /*Volunteer*/
+        'volunteer' => [
+            'driver' => 'session',
+            'provider' => 'volunteers',
+        ],
+
             
     ],
 
@@ -89,8 +96,12 @@ return [
        'volorgs' => [
             'driver' => 'eloquent',
             'model' => App\Volorg::class,
-        ], 
-       
+        ],
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Volunteer::class,
+        ],
 
         // 'users' => [
         //     'driver' => 'database',

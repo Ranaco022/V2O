@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Volorg;
+use App\Volunteer;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -40,6 +41,7 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
         $this->middleware('guest:volorg');
+        $this->middleware('guest:volunteer');
     }
 
     /**
@@ -86,6 +88,25 @@ class RegisterController extends Controller
     public function showVolorgRegisterForm()
     {
         return view('auth.register', ['url' => 'volorg']);
+    }
+
+ protected function createVolunteer(Request $request)
+    {
+        //Return to this
+
+
+        $this->validator($request->all())->validate();
+        $volunteer = Volunteer::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]);
+        return redirect()->intended('login/volunteer');
+    }
+
+    public function showVolunteerRegisterForm()
+    {
+        return view('auth.register', ['url' => 'volunteer']);
     }
 
 }

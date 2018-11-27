@@ -38,11 +38,13 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
         $this->middleware('guest:volorg')->except('logout');
+        $this->middleware('guest:volunteer')->except('logout');
     }
     
     public function guard()
     {
      return Auth::guard('volorg');
+     return Auth::guard('volunteer');
    }
     
     /*public function showVolorgLoginForm()
