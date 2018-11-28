@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+Use Auth;
 use App\Volorg;
+use Illuminate\Support\Facades\DB;
 use App\Model\CurrentVolunteer;
 use Illuminate\Http\Request;
 
 class CurrentVolunteerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:volorg');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,11 +21,16 @@ class CurrentVolunteerController extends Controller
      */
     public function index()
     {
+        $id = Auth::id();
 
-         $currentvolunteers = CurrentVolunteer::with('volorg')->get();
+        $currentvolunteers = CurrentVolunteer::WHERE('volorg_id',$id)->get();
+
+
+         //$currentvolunteers = CurrentVolunteer::with('volorg')->get();
        // $currentvolunteers = CurrentVolunteer::all();
-        return view('currentvolunteer/index')->with('currentvolunteers', $currentvolunteers);
 
+
+        return view('currentvolunteer/index')->with('user', $id)->with('currentvolunteers', $currentvolunteers);
     }
 
     /**
@@ -77,7 +88,13 @@ class CurrentVolunteerController extends Controller
     public function edit($id)
     {
         //
+        $id = Auth::id();
         $currentvolunteer = CurrentVolunteer::findOrFail($id);
+
+        if ($id != $currentvolunteer->volorg_id) {
+            return redirect('/vorlorg')->with('error', 'unauthorized Page');
+        }
+
         return view('currentvolunteer/edit')->with('currentvolunteer', $currentvolunteer);
     }
 

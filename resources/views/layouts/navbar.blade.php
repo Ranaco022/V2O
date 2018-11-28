@@ -42,7 +42,7 @@
                                     <a class="nav-link" href="{{ url('volorg') }}">Profile</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('') }}">Current Volunteers</a>
+                                    <a class="nav-link" href="{{ url('/currentvolunteer') }}">Current Volunteers</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="">Report</a>

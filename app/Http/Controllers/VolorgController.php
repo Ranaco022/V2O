@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+Use Auth;
 use App\Model\CurrentVolunteer;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Volorg;
+use App\Volunteer;
 
 class VolorgController extends Controller
 {
@@ -34,22 +36,35 @@ class VolorgController extends Controller
     
     public function showMatched()
     {
-        $matched_volunteers = DB::table('volunteers')
+        /*$matched_volunteers = DB::table('volunteers')
         ->join('volorgs', function ($join) {
-        $join->on('volorgs.required_skills', '=', 'volunteers.interest1')
-            ->orOn('volorgs.required_skills', '=', 'volunteers.interest2')
-            ->orOn ('volorgs.required_skills', '=', 'volunteers.interest3')
-            ->orOn('volorgs.required_skills', '=', 'volunteers.interest4')
-            ->orOn('volorgs.required_skills', '=', 'volunteers.interest5');
+        $join->on('volorgs.required_skills', '=', 'volunteer_profile.interest1')
+            ->orOn('volorgs.required_skills', '=', 'volunteer_profile.interest2');
+
         })
             ->orderBy('volunteers.lastName')
             ->get();
-        
-        $unique = $matched_volunteers->unique('emailAddress');
-        $unique->values()->all();
 
-        return view('matchedvolunteers')->with('matched_volunteers', $unique); 
+        // ->orOn ('volorgs.required_skills', '=', 'volunteers.interest3')
+            //->orOn('volorgs.required_skills', '=', 'volunteers.interest4')
+            //->orOn('volorgs.required_skills', '=', 'volunteers.interest5');
+
+
+        $unique = $matched_volunteers->unique('email');
+        $unique->values()->all();*/
+        $id = Auth::id();
+        $matched_volunteers = Volorg::find($id)->volunteer;
+
+
+        /*$matched_volunteers = Volorg::with('volunteer')->get();
+        foreach($matched_volunteers as $matched_volunteer)
+        {
+            echo $matched_volunteer->email;
+
+        }*/
+
+        return view('matchedvolunteers')->with('matched_volunteers', $matched_volunteers);
     }
-    
-    
+
+
 }

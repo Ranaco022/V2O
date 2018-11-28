@@ -34,4 +34,10 @@ class Volorg extends Authenticatable
     {
         return $this->hasMany('App\Model\CurrentVolunteer');
     }
+
+
+    public function volunteer()
+    {
+        return $this->hasMany('App\Volunteer');
+    }
 }

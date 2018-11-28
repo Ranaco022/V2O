@@ -66,7 +66,12 @@ return [
             'provider' => 'volunteers',
         ],
 
-            
+        'volunteer-api' => [
+            'driver' => 'token',
+            'provider' => 'volunteers',
+        ],
+
+
     ],
 
     /*
@@ -98,7 +103,7 @@ return [
             'model' => App\Volorg::class,
         ],
 
-        'admins' => [
+        'volunteers' => [
             'driver' => 'eloquent',
             'model' => App\Volunteer::class,
         ],
@@ -136,7 +141,12 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-        
+
+        'volunteers' => [
+            'provider' => 'volunteers',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
        
     ],
 

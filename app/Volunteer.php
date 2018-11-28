@@ -27,4 +27,9 @@ class Volunteer extends Authenticatable
         return $this->hasOne('App\Model\VolunteerProfile');
     }
 
+    public function volorg(){
+
+        return $this->belongsTo('App\Volorg');
+    }
+
 }

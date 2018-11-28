@@ -28,6 +28,8 @@ class CreateVolorgTable extends Migration
 			$table->string('time_period');
 			$table->string('stipend');
             $table->rememberToken();
+
+
         });
     }
 

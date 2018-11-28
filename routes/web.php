@@ -20,9 +20,8 @@ Route::get('/home', 'HomeController@index');
 
 
 
-//Route::resource('interest','InterestController');
-//Route::resource('vo','VoController');
-Route::resource('volunteer','VolunteerController');
+
+Route::resource('volunteer','VolunteerController@index');
 Route::resource('currentvolunteer','CurrentVolunteerController');
 
 Route::get('volunteer/show/{id}', 'VolunteerController@show');
@@ -48,3 +47,10 @@ Route::get('showMatched', 'VolorgController@showMatched');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Volunteer
+Route::prefix('volunteer')->group(function() {
+    Route::get('volunteer/login','Auth\VolunteerLoginController@showLoginForm')->name('volunteer.login');
+    Route::get('volunteer/login','Auth\VolunteerLoginController@login')->name('volunteer.login.submit');
+    Route::get('volunteer','VolunteerController@index')->name('volunteer.dashboard');
+});
