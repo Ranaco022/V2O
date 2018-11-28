@@ -2,12 +2,12 @@
             <div class="container">
                 @guest
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="/img/v2ologo.png" alt="v2o logo" style="width:15%; height:15%">
+                        <img src="/img/v2ologo.png" alt="v2o logo" style="width:10%; height:10%">
                         {{ config('V2O', '') }}
                     </a>
                 @else
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="/img/v2ologo.png" alt="v2o logo" style="width:8%; height:8%">
+                        <img src="/img/v2ologo.png" alt="v2o logo" style="width:10%; height:10%">
                         {{ config('') }}
                     </a>
                 @endguest
