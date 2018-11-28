@@ -18,13 +18,9 @@ class CreateVolunteersTable extends Migration
             $table->timestamps();
             $table->string('firstName');
             $table->string('lastName');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('password');
             $table->rememberToken();
-            $table->integer('volorg_id')->unsigned()->nullable(true);
-
-            //Set up the foreign key table
-            $table->foreign('volorg_id')->references('id')->on('volorgs');
         });
     }
 

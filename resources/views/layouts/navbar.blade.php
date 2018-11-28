@@ -2,13 +2,13 @@
             <div class="container">
                 @guest
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="/img/V2Ologo.png" alt="v2o logo" height="53.17" width="60.2px">
-                        {{ config('V2O', 'Volunteer 2 Organisation') }}
+                        <img src="/img/v2ologo.png" alt="v2o logo" style="width:10%; height:10%">
+                        {{ config('V2O', '') }}
                     </a>
                 @else
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="/img/V2Ologo.png" alt="v2o logo" height="53.17" width="60.2px">
-                        {{ config('V2O', 'Volunteer 2 Organisation') }}
+                        <img src="/img/v2ologo.png" alt="v2o logo" style="width:10%; height:10%">
+                        {{ config('') }}
                     </a>
                 @endguest
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

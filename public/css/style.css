@@ -1,0 +1,250 @@
+.logo{
+    height:auto;
+    width: 100px;
+}
+
+#butt
+{
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+
+#home{
+    text-align: center;
+    width: 100%;
+}
+
+.card
+{
+    margin-top: 50px;
+}
+
+.card-header
+{
+    background-color: darkolivegreen;
+    color:white;
+    font-weight: bold;
+}
+
+.btn
+{
+    background-color:cadetblue;
+    border-color:cadetblue;
+    color:white;
+    padding:3px;
+}
+
+.btn:hover
+{
+    background-color: darkcyan;
+}
+
+.profile
+{
+    float:left;
+    margin: 30px;
+    width:30%;
+}
+
+.profile-container
+{
+    margin-top: 30px;
+    float:left;
+    background-color: white;
+    width:30%;
+    height: 100%;
+}
+
+.schedule
+{
+    float:left;
+    margin:55px 30px;
+    width:60%;
+}
+
+
+.create-sch
+{
+    font-size:15px;
+    padding-left: 10px;
+    text-decoration: underline;
+}
+
+.delete
+{
+    border-radius: 5px;
+    border:none;
+
+}
+
+.delete:hover
+{
+    color:white;
+    background-color: red;
+    cursor:pointer;
+}
+
+#edit
+{
+   float: left;
+}
+
+#delete
+{
+   float:left;
+}
+
+.create-btn
+{
+    border: none;
+    background-color: cadetblue;
+    color:white;
+    padding:5px 10px;
+    border-radius: 5px;
+}
+
+.create-btn:hover
+{
+    background-color: darkcyan;
+    color:white;
+    cursor:pointer;
+}
+
+.create-sch-page-container
+{
+    margin:40px 300px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.create-report-container{
+    margin:40px 200px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.create-sch-page
+{
+    padding:5px 50px;
+}
+
+#sch-heading
+{
+    text-align:center;
+    padding-top:10px;
+    padding-bottom:0px;
+}
+
+.schedule
+{
+    margin-top:50px;
+}
+
+.login-container
+{
+    margin:0px 400px 50px 400px;
+    width: 40%;
+}
+
+.login-form-container
+{
+    padding-top: 20px;
+    display: block;
+    text-align: center;
+}
+
+.login-form
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    width: 80%;
+}
+
+.login-img
+{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    height: auto;
+    width: 400px;
+}
+
+.login-input
+{
+    width:95%;
+    padding:10px;
+    margin:10px 0px;
+    border-radius:3px;
+    border: 1px solid darkgray ;
+}
+
+.login-btn
+{
+    padding: 8px 7px;
+    border:none;
+    border-radius: 3px;
+    background-color:darkcyan;
+    width:100%;
+    color:white;
+    margin-top:5px;
+}
+
+.login-btn:hover
+{
+    background-color: black;
+    cursor:pointer;
+}
+
+.forgot-psw
+{
+
+    color:darkgreen;
+    text-decoration: none;
+    float: left;
+    margin-top:5px;
+}
+
+.forgot-psw:hover
+{
+    cursor:pointer;
+    text-decoration: underline;
+}
+
+.form-check
+{
+    float:left;
+    margin-right:20px;
+    margin-top:8px;
+}
+
+.register
+{
+    text-decoration: none;
+    color: darkgreen;
+    padding:4px;
+    margin-top:5px;
+}
+
+.login-body
+{
+    background-color: #f6f6f6;
+}
+
+#resizable-form{
+
+    resize:vertical;
+    overflow:auto;
+}
+
+#back-btn{
+    margin-left: 460px;
+
+}
+
+/*@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }*/
