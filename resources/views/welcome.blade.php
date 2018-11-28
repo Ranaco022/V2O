@@ -4,7 +4,7 @@
 <section id="home" class="home-section bg-gray">
         <div class="container">
           <img src="{{ asset('/img/banner.png') }}" style="width:100%">
-
+<p><h2 style="text-align:center">Choose your cause</h2></p>
 <div style="margin:auto">
   <table style="height: 354px; margin: auto;" width="735" cellpadding="4">
 <tbody>
