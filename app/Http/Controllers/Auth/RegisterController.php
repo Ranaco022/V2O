@@ -41,7 +41,7 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
         $this->middleware('guest:volorg');
-        $this->middleware('guest:volunteer');
+       // $this->middleware('guest:volunteer');
     }
 
     /**
@@ -90,7 +90,7 @@ class RegisterController extends Controller
         return view('auth.register', ['url' => 'volorg']);
     }
 
- protected function createVolunteer(Request $request)
+/* protected function createVolunteer(Request $request)
     {
         //Return to this
 
@@ -107,6 +107,6 @@ class RegisterController extends Controller
     public function showVolunteerRegisterForm()
     {
         return view('auth.register', ['url' => 'volunteer']);
-    }
+    }*/
 
 }

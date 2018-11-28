@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
 
-class VolorgLoginController extends Controller
+class VolunteerLoginController extends Controller
 {
     //
     
