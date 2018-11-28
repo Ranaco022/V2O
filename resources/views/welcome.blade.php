@@ -139,7 +139,7 @@
                                         <ul>
                                             <li>
                                                 <div class="white-button">
-                                                    <a href="#" class="scroll-link" data-id="portfolio">Register Now</a>
+                                                    <a href="{{ route('register') }}"  data-id="portfolio">Register Now</a>
                                                 </div>
                                             </li>
                                             <li>
