@@ -10,7 +10,7 @@
     <title>V2O | Login</title>
 </head>
 
-<body class="login-body">
+<body class="login-body" style="margin-top:8%;">
 <div class="login-container">
             <img class="login-img" alt="V2OLogo" src ="{{ asset('img/v2ologo.png') }}">
 

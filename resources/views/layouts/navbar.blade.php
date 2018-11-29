@@ -1,15 +1,15 @@
  <nav class="navbar navbar-expand-md navbar-inverse navbar-laravel">
             <div class="container">
                 @guest
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="/img/v2ologo.png" alt="v2o logo" style="width:10%; height:10%">
+                    <!--a class="navbar-brand" href="{{ url('/') }}">
+                        <img src="/img/v2ologo.png" alt="v2o logo" style="width:8%; height:8%">
                         {{ config('V2O', '') }}
-                    </a>
+                    </a-->
                 @else
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="/img/v2ologo.png" alt="v2o logo" style="width:10%; height:10%">
+                    <!--a class="navbar-brand" href="{{ url('/') }}">
+                        <img src="/img/v2ologo.png" alt="v2o logo" style="width:8%; height:8%">
                         {{ config('') }}
-                    </a>
+                    </a-->
                 @endguest
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -37,17 +37,26 @@
                             </li>
                         @else
                         <!-- Left Side Of Navbar -->
-							<ul class="navbar-nav mr-auto">
+                            <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('volorg') }}">Profile</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/currentvolunteer') }}">Current Volunteers</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="">Report</a>
-                                </li>
                             </ul>
+
+                            <div class="dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Volunteers <span class="caret"></span>
+                                </a>
+
+                                <ul class=" dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url('/currentvolunteer') }}">Current Volunteers</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url('showMatched') }}">Matched Volunteers</a>
+                                    </li>
+                                </ul>
+                            </div>
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

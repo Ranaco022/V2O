@@ -75,8 +75,10 @@ class CurrentVolunteerController extends Controller
     public function show($id)
     {
         //
-        $currentvolunteer = CurrentVolunteer::findOrFail($id);
+        $id = Auth::id();
+        $currentvolunteer = CurrentVolunteer::WHERE('volorg_id',$id)->get();
         return view('currentvolunteer/show')->with('currentvolunteer', $currentvolunteer);
+
     }
 
     /**
@@ -88,12 +90,12 @@ class CurrentVolunteerController extends Controller
     public function edit($id)
     {
         //
-        $id = Auth::id();
-        $currentvolunteer = CurrentVolunteer::findOrFail($id);
-
-        if ($id != $currentvolunteer->volorg_id) {
+        $user_id = Auth::id();
+        $currentvolunteer = CurrentVolunteer::WHERE('volorg_id',$user_id)->get();
+        echo $currentvolunteer;
+        /*if ($id != $currentvolunteer->volorg_id) {
             return redirect('/vorlorg')->with('error', 'unauthorized Page');
-        }
+        }*/
 
         return view('currentvolunteer/edit')->with('currentvolunteer', $currentvolunteer);
     }
