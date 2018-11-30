@@ -97,7 +97,7 @@ class CurrentVolunteerController extends Controller
             return redirect('/vorlorg')->with('error', 'unauthorized Page');
         }*/
 
-        return view('currentvolunteer/edit')->with('currentvolunteer', $currentvolunteer);
+        return view('currentvolunteer/edit')->with('user',$user_id)->with('currentvolunteer', $currentvolunteer);
     }
 
     /**

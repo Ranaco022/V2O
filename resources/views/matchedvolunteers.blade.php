@@ -42,7 +42,7 @@
                                                         <p>Skills: {{ $volorg->required_skills }}</p>
                                                         <p>Name: {{ $matched_volunteer->volunteer->firstName }} {{ $matched_volunteer->volunteer->lastName }}</p>
                                                         <p>Email: {{ $matched_volunteer->volunteer->email }}</p>
-                                                        <p>Email: {{ $matched_volunteer->interest1 }}</p>
+                                                        <!--p>Email: {{ $matched_volunteer->interest1 }}</p-->
                                                     </div>
                                                 </div>
                                             </div>
