@@ -18,7 +18,12 @@
 {
     margin-top: 50px;
 }
-
+#matched:hover
+{
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
+    transform: scale(1.10, 1.10);
+    border: 2px solid #9561e2;
+}
 .card-header
 {
     background-color: darkolivegreen;

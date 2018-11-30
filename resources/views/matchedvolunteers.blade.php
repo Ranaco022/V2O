@@ -35,14 +35,18 @@
                             @if($matched_volunteers != null)
                                 <div class="row">
                                      @foreach ($matched_volunteers as $matched_volunteer)
-                                        <div class="col-sm-3 col-md-4">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <p>Name: {{ $matched_volunteer->firstName }} {{ $matched_volunteer->lastName }}</p>
-                                                    <p>Email: {{ $matched_volunteer->emailAddress }}</p>
+                                        @if(($matched_volunteer->interest1 == 'Beach Cleanup') OR ($matched_volunteer->interest2 == 'Animal Care') )
+                                            <div class="col-sm-3 col-md-4">
+                                                <div class="card" id="matched">
+                                                    <div class="card-body">
+                                                        <p>Skills: {{ $volorg->required_skills }}</p>
+                                                        <p>Name: {{ $matched_volunteer->volunteer->firstName }} {{ $matched_volunteer->volunteer->lastName }}</p>
+                                                        <p>Email: {{ $matched_volunteer->volunteer->email }}</p>
+                                                        <p>Email: {{ $matched_volunteer->interest1 }}</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        @endif
                                      @endforeach
                                 </div>
                             @else
