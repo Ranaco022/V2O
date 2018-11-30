@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 use DB;
 Use Auth;
 use App\Model\CurrentVolunteer;
+use App\Model\VolunteerProfile;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Volorg;
 use App\Volunteer;
-use App\Model\VolunteerProfile;
 
 class VolorgController extends Controller
 {
@@ -54,36 +54,13 @@ class VolorgController extends Controller
         $unique = $matched_volunteers->unique('email');
         $unique->values()->all();*/
         $id = Auth::id();
-        //$matched_volunteers = Volorg::with('volunteer')->get();
-        //$matched_volunteers = //where('volorg_id',$id)->get();
-        $volunteers = VolunteerProfile::with('volunteer')->get();
         $volorg = Volorg::findOrFail($id);
-        //echo $volorg->required_skills;
+        $volunteers = VolunteerProfile::with('volunteer')->get();
+         echo $volorg;
+        //$matched_volunteers = $volunteer;
 
-       /* foreach ($volunteers as $volunteer)
-        {
-            $volunteer_interest1 = $volunteer->interest1;
-            $volunteer_interest2 = $volunteer->interest1;
-            $volorg_interest = $volorg->required_skills;
 
-            if(($volunteer_interest1 == $volorg_interest) OR ($volunteer_interest2 == $volorg_interest) )
-            {
-                $matched_volunteers = $volunteer;
-                echo $matched_volunteers;
-
-            }
-
-        }*/
-
-        //$matched_volunteers = Volorg::with('volunteer')->get();
-
-      /*  foreach($matched_volunteers as $matched_volunteer)
-        {
-           // echo $matched_volunteer->email;
-
-        }*/
-        $matched_volunteers = $volunteers;
-        return view('matchedvolunteers')->with('matched_volunteers', $matched_volunteers)->with('volorg',$volorg);
+        return view('matchedvolunteers')->with('volunteers', $volunteers)->with('volorg', $volorg);
     }
 
 

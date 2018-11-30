@@ -1,6 +1,6 @@
 /*ALL PAGES*/
 body {
-	width:100%;
+	width:60%;
 	margin: 0;
 	padding:0;
 	background: url(../img/volunteer.jpg);
@@ -8,7 +8,7 @@ body {
 	 background-repeat: no-repeat;
 	 background-attachment: fixed;
 	font-family: 'Nunito', sans-serif;
-	
+
 }
 
 .title
@@ -43,15 +43,15 @@ body {
 	background-position: center;
 	/*background-size: ;*/
 	box-sizing: border-box;
-	
-	
+
+
 }
 .login-container .right{
 	float:right;
 	width:50%;
 	height: 400px;
 	box-sizing: border-box;
-	
+
 }
 /*INDEX PAGE*/
 .vo-container
@@ -68,7 +68,7 @@ body {
     width: 100%;
     border-collapse: collapse;
 	margin: 30px auto;
-	
+
 }
 
 .vo-container tr,th,td
@@ -80,7 +80,7 @@ body {
 	width: 5%;
 	/height: 20%;
 	/*display: inline-block;*/
-	
+
 }
 .vo-container  table tr {background: white;}
 .vo-container tr:nth-of-type(1)
@@ -99,7 +99,7 @@ body {
 	box-sizing: border-box;
 	height:400px;
 	background: #fff;
-}	
+}
 .form-box p
 {
 	margin: 0;
@@ -117,7 +117,7 @@ body {
 .form-box input[type="password"]
 {
 	border: none;
-	border-bottom: 2px solid; 
+	border-bottom: 2px solid;
 	outline:none;
 	height: 30px;
 	width: 80%;
@@ -175,8 +175,8 @@ a:hover{
 	height:550px;
 	background-color: #00cc99; /*#a6af13;*/
 	box-sizing: border-box;
-	
-		
+
+
 }
 .sign-container .sign-left h3{
 	text-align: center;
@@ -192,7 +192,7 @@ a:hover{
 	width:50%;
 	height: 550px;
 	box-sizing: border-box;
-	
+
 }
 /*Edit signup form*/
 .sign-form-box
@@ -201,9 +201,9 @@ a:hover{
 	padding: 80px 40px;
 	height:400px;
 	box-sizing: border-box;
-	
+
 	/*background: #fff;*/
-}	
+}
 .sign-form-box p
 {
 	margin: 0;
@@ -221,14 +221,14 @@ a:hover{
 .sign-form-box input[type="password"]
 {
 	border: none;
-	border-bottom: 2px solid; 
+	border-bottom: 2px solid;
 	outline:none;
 	height: 20px;
 	width: 80%;
 }
 .sign-left .sign-form-box input[type="text"],
 .sign-left .sign-form-box input[type="password"]{
-	
+
 	height: 30px;
 }
 
@@ -286,13 +286,13 @@ a:hover{
 }
 
 .vo-info-container .right-container{
-	
+
 	float:right;
 	width:50%;
 	padding-left: 10px;
 	height: 530px;
 	box-sizing: border-box;
-	
+
 }
 
 .vo-info-container .text-left input[type=text]
@@ -315,11 +315,11 @@ a:hover{
     box-sizing: border-box;
 }
 /*Fields in the middle of the form*/
-.vo-info-container .right-container .short-text-right 
+.vo-info-container .right-container .short-text-right
 {
   float: left;
-  
-  
+
+
 }
 /*Form on the right*/
 .vo-info-container .right-container .med-text-right input[type=text]

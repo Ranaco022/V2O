@@ -1,15 +1,15 @@
  <nav class="navbar navbar-expand-md navbar-inverse navbar-laravel">
             <div class="container">
                 @guest
-                    <!--a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="/img/v2ologo.png" alt="v2o logo" style="width:8%; height:8%">
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        <!-- <img src="/img/tialablog.png" alt="v2o logo" style="width:30%; height:30%"> -->
                         {{ config('V2O', '') }}
-                    </a-->
+                    </a>
                 @else
-                    <!--a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="/img/v2ologo.png" alt="v2o logo" style="width:8%; height:8%">
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        <!-- <img src="/img/tialablogo.png" alt="v2o logo" style="width:30%; height:30%"> -->
                         {{ config('') }}
-                    </a-->
+                    </a>
                 @endguest
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

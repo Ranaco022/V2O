@@ -32,17 +32,17 @@
 
 
                         <div class="container-fluid">
-                            @if($matched_volunteers != null)
+                            @if($volunteers != null)
                                 <div class="row">
-                                     @foreach ($matched_volunteers as $matched_volunteer)
-                                        @if(($matched_volunteer->interest1 == 'Beach Cleanup') OR ($matched_volunteer->interest2 == 'Animal Care') )
+                                     @foreach ($volunteers as $volunteer)
+                                         @if(($volunteer->interest1 == 'Beach Cleanup')OR($volunteer->interest2 == 'Child Care'))
                                             <div class="col-sm-3 col-md-4">
                                                 <div class="card" id="matched">
                                                     <div class="card-body">
-                                                        <p>Skills: {{ $volorg->required_skills }}</p>
-                                                        <p>Name: {{ $matched_volunteer->volunteer->firstName }} {{ $matched_volunteer->volunteer->lastName }}</p>
-                                                        <p>Email: {{ $matched_volunteer->volunteer->email }}</p>
-                                                        <!--p>Email: {{ $matched_volunteer->interest1 }}</p-->
+
+                                                        <p>Name: {{ $volunteer->volunteer->firstName }} {{ $volunteer->volunteer->lastName }}</p>
+                                                        <p>Email: {{ $volunteer->volunteer->email }}</p>
+                                                        <!--p>Email: {{ $volunteer->interest1 }}</p-->
                                                     </div>
                                                 </div>
                                             </div>

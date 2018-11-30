@@ -54,16 +54,18 @@ class CurrentVolunteerController extends Controller
     {
         //
         CurrentVolunteer::create([
-                'lastName' => $request->lastName,
                 'firstName' => $request->firstName,
+                'lastName' => $request->lastName,
                 'homeAddress' => $request->homeAddress,
                 'cellNumber' => $request->cellNumber,
+                'homeNumber' => $request->homeNumber,
                 'emailAddress' => $request->emailAddress,
                 'hoursWorked' => $request->hoursWorked,
-                'comment' => $request->comment
+                'comment' => $request->comment,
+                'volorg_id' => auth()->user()->id
             ]
         );
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Record Successfully Created');
     }
 
     /**
@@ -75,8 +77,7 @@ class CurrentVolunteerController extends Controller
     public function show($id)
     {
         //
-        $id = Auth::id();
-        $currentvolunteer = CurrentVolunteer::WHERE('volorg_id',$id)->get();
+        $currentvolunteer = CurrentVolunteer::findOrFail($id);
         return view('currentvolunteer/show')->with('currentvolunteer', $currentvolunteer);
 
     }
@@ -89,15 +90,20 @@ class CurrentVolunteerController extends Controller
      */
     public function edit($id)
     {
-        //
-        $user_id = Auth::id();
-        $currentvolunteer = CurrentVolunteer::WHERE('volorg_id',$user_id)->get();
-        echo $currentvolunteer;
-        /*if ($id != $currentvolunteer->volorg_id) {
-            return redirect('/vorlorg')->with('error', 'unauthorized Page');
-        }*/
+        //store the authenticated user id
+        $volorg_id = Auth::id();
 
-        return view('currentvolunteer/edit')->with('user',$user_id)->with('currentvolunteer', $currentvolunteer);
+        //store the current volunteer who needs editing
+        $currentvolunteer = CurrentVolunteer::findOrFail($id);
+
+        if ($volorg_id != $currentvolunteer->volorg_id) {
+            return redirect('/vorlorg')->with('error', 'unauthorized Page');
+        }
+
+        return view('currentvolunteer/edit')->with('currentvolunteer', $currentvolunteer);
+
+        //$currentvolunteer = CurrentVolunteer::WHERE('volorg_id',$user_id)->get();
+        //with('user',$user_id)->
     }
 
     /**
@@ -123,7 +129,8 @@ class CurrentVolunteerController extends Controller
         $currentvolunteer->save();
 
         //var_dump($interest);
-        return redirect ('/currentvolunteer/'.$id);
+        //return redirect ('/currentvolunteer/'.$id);
+        return redirect('currentvolunteer/')->with('success', 'Record Successfully Updated');
     }
 
     /**
