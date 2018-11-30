@@ -28,59 +28,36 @@
                     @endif
                     <!--a href="{{ url('volorg') }}">Back to Main Page</a>
                     <h2>List of volunteers interested in your cause</h2>
-                    <br>
+                    <br-->
 
 
-                <table class="tg">
-                  <tr>
-                    <th class="tg-ddb2">First Name</th>
-                    <th class="tg-0lax">Last Name</th>
-                    <th class="tg-0lax">Address</th>
-                    <th class="tg-0lax">Cell</th>
-                    <th class="tg-0lax">Home</th>
-                    <th class="tg-0lax">E-mail</th>
-                  </tr>
-
-                    @foreach ($matched_volunteers as $matched_volunteer)
-                  <tr>
-                    <td class="tg-buh4">{{ $matched_volunteer->firstName }}</td>
-                    <td class="tg-buh4">{{ $matched_volunteer->lastName }}</td>
-                    <td class="tg-buh4">{{ $matched_volunteer->homeAddress }}</td>
-                    <td class="tg-buh4">{{ $matched_volunteer->cellNumber }}</td>
-                    <td class="tg-buh4">{{ $matched_volunteer->homeNumber }}</td>
-                    <td class="tg-buh4">{{ $matched_volunteer->emailAddress }}</td>
-                  </tr>
-                @endforeach
-                </table-->
                         <div class="container-fluid">
                             @if($matched_volunteers != null)
                                 <div class="row">
                                      @foreach ($matched_volunteers as $matched_volunteer)
-                                        <div class="col-sm-3 col-md-4">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <p>Name: {{ $matched_volunteer->firstName }} {{ $matched_volunteer->lastName }}</p>
-                                                    <p>Email: {{ $matched_volunteer->emailAddress }}</p>
+                                        @if(($matched_volunteer->interest1 == 'Beach Cleanup') OR ($matched_volunteer->interest2 == 'Animal Care') )
+                                            <div class="col-sm-3 col-md-4">
+                                                <div class="card" id="matched">
+                                                    <div class="card-body">
+                                                        <p>Skills: {{ $volorg->required_skills }}</p>
+                                                        <p>Name: {{ $matched_volunteer->volunteer->firstName }} {{ $matched_volunteer->volunteer->lastName }}</p>
+                                                        <p>Email: {{ $matched_volunteer->volunteer->email }}</p>
+                                                        <p>Email: {{ $matched_volunteer->interest1 }}</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        @endif
                                      @endforeach
                                 </div>
                             @else
                                 <h1>There are currently no interested volunteers</h1>
                             @endif
                         </div>
-                                <!--td class="tg-buh4">{{ $matched_volunteer->firstName }}</td>
-                                <td class="tg-buh4">{{ $matched_volunteer->lastName }}</td>
-                                <td class="tg-buh4">{{ $matched_volunteer->homeAddress }}</td>
-                                <td class="tg-buh4">{{ $matched_volunteer->cellNumber }}</td>
-                                <td class="tg-buh4">{{ $matched_volunteer->homeNumber }}</td>
-                                <td class="tg-buh4">{{ $matched_volunteer->emailAddress }}</td-->
 
 
                 <a href="{{ url('volorg') }}">Back to Main Page</a>
 
-                    
+
                 </div>
             </div>
         </div>

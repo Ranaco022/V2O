@@ -53,7 +53,7 @@ class VolorgController extends Controller
         $unique = $matched_volunteers->unique('email');
         $unique->values()->all();*/
         $id = Auth::id();
-        $matched_volunteers = Volorg::where(,$id)->volunteer;
+        $matched_volunteers = Volorg::find($id)->volunteer;
 
 
         /*$matched_volunteers = Volorg::with('volunteer')->get();
