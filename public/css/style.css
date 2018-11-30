@@ -11,7 +11,6 @@
 
 #home{
     text-align: center;
-    width: 100%;
 }
 
 .card
@@ -26,15 +25,15 @@
 }
 .card-header
 {
-    background-color: darkolivegreen;
+    background-color: darkcyan;
     color:white;
     font-weight: bold;
 }
 
 .btn
 {
-    background-color:cadetblue;
-    border-color:cadetblue;
+    /*background-color:cadetblue;*/
+    /*border-color:cadetblue;*/
     color:white;
     padding:3px;
 }
